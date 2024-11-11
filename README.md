@@ -29,9 +29,9 @@ Interface
 ## Dependency installation
 
 If you dont have the dependencies required you can install theme from here
-**Arch based distro** : sudo pacman -S cmake zenity
-**Debian based distro** : sudo apt install cmake zenity
-**Fedora based distro**: sudo dnf install cmake zenity
+- **Arch based distro** : sudo pacman -S cmake zenity
+- **Debian based distro** : sudo apt install cmake zenity
+- **Fedora based distro**: sudo dnf install cmake zenity
 
 ## Installation 
 
