@@ -51,6 +51,10 @@ Simply clone the github repository :
 ```sh
 git clone https://github.com/fedoralife/C---Project---Setup.git
 ```
+2. Then Go To the directory
+``sh
+cd C---Project---Setup
+``
 2. Finally:
 ```sh
 ./script.sh
