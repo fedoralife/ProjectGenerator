@@ -38,17 +38,17 @@ If you dont have the dependencies required you can install theme from here
 sudo apt install cmake zenity
 ```
 - **Fedora based distro**:
-  ```sh
-  sudo dnf install cmake zenity
-  ```
+```sh
+sudo dnf install cmake zenity
+```
 
 ## Installation 
 
 Simply clone the github repository : 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/fedoralife/C---Project---Setup.git
-    ```
+```sh
+git clone https://github.com/fedoralife/C---Project---Setup.git
+```
 2. Finally:
 ```sh
 ./script.sh
