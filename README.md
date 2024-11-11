@@ -29,9 +29,18 @@ Interface
 ## Dependency installation
 
 If you dont have the dependencies required you can install theme from here
-- **Arch based distro** : ```sudo pacman -S cmake zenity```
-- **Debian based distro** : ```sudo apt install cmake zenity```
-- **Fedora based distro**: ```sudo dnf install cmake zenity```
+- **Arch based distro** :
+```sh
+    sudo pacman -S cmake zenity
+```
+- **Debian based distro** :
+ ```sh
+sudo apt install cmake zenity
+```
+- **Fedora based distro**:
+  ```sh
+  sudo dnf install cmake zenity
+  ```
 
 ## Installation 
 
@@ -40,10 +49,12 @@ Simply clone the github repository :
     ```sh
     git clone https://github.com/fedoralife/C---Project---Setup.git
     ```
-Then:
+2. Finally:
 ```sh
 ./script.sh
 ```
+## How It Works And Use
+
 
 
 ## Enjoy!!
