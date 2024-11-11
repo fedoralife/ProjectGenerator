@@ -36,8 +36,12 @@ If you dont have the dependencies required you can install theme from here
 ## Installation 
 
 Simply clone the github repository : 
-git clone 
+git clone https://github.com/fedoralife/C---Project---Setup.git
 
-Then run ./script
-enjoy
+Then:
+./script.sh
+
+
+
+## Enjoy!!
 
