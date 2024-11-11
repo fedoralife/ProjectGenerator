@@ -23,7 +23,10 @@ This script generates a boilerplate structure for C++ projects, setting up folde
 
 Interface
 
-![Screenshot From 2024-11-11 16-35-15](https://github.com/user-attachments/assets/5724d1f8-e97b-4c58-86be-29b2c0fdaea7)
+![Screenshot From 2024-11-11 17-05-08](https://github.com/user-attachments/assets/c32ec272-6e79-4266-ac54-3a8baa63b1d3)
+![Screenshot From 2024-11-11 17-04-53](https://github.com/user-attachments/assets/659e64c9-1e1b-4139-88e3-7f516cf4d7e6)
+![Screenshot From 2024-11-11 17-04-30](https://github.com/user-attachments/assets/20f5c24b-7881-4e20-b0b7-be39bcf43a7a)
+![Screenshot From 2024-11-11 16-35-15](https://github.com/user-attachments/assets/590b418e-f618-4bba-a320-0105959d98c2)
 
 
 ## Dependency installation
