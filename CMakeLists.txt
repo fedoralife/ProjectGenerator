@@ -68,4 +68,3 @@ endif()
 # target_link_libraries(my_program PRIVATE some_library)
 
 # Installation (optional)
-install(TARGETS application DESTINATION bin)

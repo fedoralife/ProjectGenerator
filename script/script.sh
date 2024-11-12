@@ -5,7 +5,8 @@ set_dark_mode() {
     export GTK_THEME=Adwaita:dark
     echo "Dark mode enabled."
 }
-
+#Add a theme switcher
+#also make it do c poject
 
 # Function to create a new project
 create_project() {
@@ -44,7 +45,7 @@ zenity --info --title="Build Instructions" --text="To build the project, follow 
 2. Navigate to the project directory.
 3. Run the following commands:
    mkdir build
-   cd build
+   cd build 
    cmake ..
    make
 4. Run the executable:
@@ -53,15 +54,60 @@ EOL
 
     cat > CMakeLists.txt <<EOL
 cmake_minimum_required(VERSION 3.10)
-project($PROJECT_NAME)
+project(CppFileGenerator VERSION 1.0)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD_REQUIRED True)
 
-# Add source directories
-include_directories(header)
+# Set output directory within the build directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY \${CMAKE_BINARY_DIR}/bin)
 
-# Add executable
-add_executable($PROJECT_NAME src/main.cpp)
+if (WIN32)
+    message(STATUS "Configuring for Windows...")
+    if (MSVC)
+        set(CMAKE_GENERATOR_PLATFORM x64)
+    else()
+        find_program(GCC_BIN g++)
+        find_program(CLANG_BIN clang)
+        if (GCC_BIN)
+            set(CMAKE_C_COMPILER \${GCC_BIN})
+        elseif (CLANG_BIN)
+            set(CMAKE_C_COMPILER \${CLANG_BIN})
+        else()
+            message(FATAL_ERROR "Neither MSVC, GCC, nor Clang found! Please install a compiler.")
+        endif()
+    endif()
+elseif (APPLE)
+    set(CMAKE_C_COMPILER clang++)
+elseif (UNIX)
+    find_program(GCC_BIN g++)
+    find_program(CLANG_BIN clang)
+    if (GCC_BIN)
+        set(CMAKE_C_COMPILER \${GCC_BIN})
+    elseif (CLANG_BIN)
+        set(CMAKE_C_COMPILER \${CLANG_BIN})
+    else()
+        message(FATAL_ERROR "Neither G++ nor Clang found! Please install a compiler.")
+    endif()
+endif()
+
+# Locate source files
+file(GLOB SOURCES "src/*.cpp")
+
+# Add executable target with source files
+add_executable(app \${SOURCES})
+
+# Link header file directory
+target_include_directories(app PRIVATE header)
+
+if (MSVC)
+    target_compile_options(app PRIVATE /W4 /permissive-)
+else()
+    target_compile_options(app PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+EOL
+
+
 EOL
 
     cat > header/win.h <<EOL
