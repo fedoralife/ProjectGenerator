@@ -82,7 +82,7 @@ cd C---Project---Setup
 ```sh
 cd script
 ```
-2. Finally:
+3. Finally:
 ```sh
 ./script.sh
 ```
