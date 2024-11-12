@@ -1,5 +1,7 @@
 # Purpose: 
-This Bash script automates the setup of a C++ project by creating a standard project structure and essential files.
+This is a multiplatform applicaton used to generate a basic template for a c++ project which is useful for when u don't want to create it everytime.
+The standalone applicaton is in the bin directory.
+It is written both in bash as well as in C. 
 
 # Project Structure: 
 The generator creates the following structure:
@@ -8,7 +10,21 @@ The generator creates the following structure:
     build/: Build files and output.
     CMakeLists.txt: CMake configuration file for building the project.
 
-# C++ Project Generator
+# Build :
+There if you want to build the project.
+- **Create a folder/directory know as build**
+Open Terminal
+```sh
+cd C---Project---Setup
+```
+```sh
+mkdir build
+```
+```sh 
+cmake build
+```
+
+# C++ Project Generator : 
 
 This script generates a boilerplate structure for C++ projects, setting up folders, essential files, a `CMakeLists.txt` for CMake-based builds and a `.gitignore` for when commiting to to github
 
@@ -16,7 +32,7 @@ This script generates a boilerplate structure for C++ projects, setting up folde
 - **Automated Folder Creation**: Sets up `src/`, `include/`, and `build/` directories.
 - **CMake Integration**: Initializes a `CMakeLists.txt` file for managing the build process.
 
-## Requirements
+## Requirements - For Direct Running
 - **Bash**: Ensure Bash is installed.
 - **CMake**: Required to use the generated `CMakeLists.txt`.
 - **Zenity**: Required for the UI
@@ -31,6 +47,7 @@ Interface
 ## Dependency installation
 
 If you dont have the dependencies required you can install theme from here
+### Linux
 - **Arch based distro** :
 ```sh
     sudo pacman -S cmake zenity
@@ -43,8 +60,15 @@ sudo apt install cmake zenity
 ```sh
 sudo dnf install cmake zenity
 ```
+### Windows
+See official websites
+cmake - `https://cmake.org/download/`
 
-## Installation 
+### MacOS
+See official websites
+cmake - `https://cmake.org/download/`
+
+## Direct script sunning 
 
 Simply clone the github repository : 
 1. Clone the repository:
@@ -54,6 +78,7 @@ git clone https://github.com/fedoralife/C---Project---Setup.git
 2. Then Go To the directory
 ```sh
 cd C---Project---Setup
+cd script
 ```
 2. Finally:
 ```sh
