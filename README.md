@@ -68,7 +68,7 @@ cmake - `https://cmake.org/download/`
 See official websites
 cmake - `https://cmake.org/download/`
 
-## Direct script sunning 
+## Direct script running 
 
 Simply clone the github repository : 
 1. Clone the repository:
@@ -84,8 +84,6 @@ cd script
 ```sh
 ./script.sh
 ```
-## How It Works And Use
-
 
 
 ## Enjoy!!
