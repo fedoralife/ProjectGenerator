@@ -78,6 +78,8 @@ git clone https://github.com/fedoralife/C---Project---Setup.git
 2. Then Go To the directory
 ```sh
 cd C---Project---Setup
+```
+```sh
 cd script
 ```
 2. Finally:
