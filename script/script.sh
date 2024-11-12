@@ -6,27 +6,6 @@ set_dark_mode() {
     echo "Dark mode enabled."
 }
 
-# Function to read the saved theme from the configuration file
-read_saved_theme() {
-    # Check if the configuration file exists and is not empty
-    if [ -f "$CONFIG_FILE" ]; then
-        saved_theme=$(cat "$CONFIG_FILE")
-        if [ -z "$saved_theme" ]; then
-            echo "Dark Mode"  # Return Dark Mode if the file is empty
-        else
-            echo "$saved_theme"  # Return the saved theme
-        fi
-    else
-        echo "Dark Mode"  # Default to Dark Mode if the file doesn't exist
-    fi
-}
-
-# Function to save the theme to the configuration file
-save_theme() {
-    echo "$1" > "$CONFIG_FILE"
-}
-
-
 
 # Function to create a new project
 create_project() {
@@ -155,11 +134,8 @@ show_help() {
 
 # Main loop for handling user actions
 while true; do
-    # Read the saved theme and apply it if needed
-    saved_theme=$(read_saved_theme)
-    if [ "$saved_theme" == "Dark Mode" ]; then
-        set_dark_mode
-    fi
+    # Load theme
+           set_dark_mode
 
     # Launch Zenity for project-related actions
     ACTION=$(zenity --list --title="C++ Project Setup" --column="Action" \
