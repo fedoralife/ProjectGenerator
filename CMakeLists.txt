@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(MyCProgram VERSION 1.0)
+project(CppFileGenerator VERSION 1.0)
 
 # Specify C standard
 set(CMAKE_C_STANDARD 99)
@@ -68,4 +68,4 @@ endif()
 # target_link_libraries(my_program PRIVATE some_library)
 
 # Installation (optional)
-install(TARGETS my_program DESTINATION bin)
+install(TARGETS application DESTINATION bin)
