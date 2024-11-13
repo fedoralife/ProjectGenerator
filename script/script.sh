@@ -2554,6 +2554,21 @@ $purchaseOverlay-bg-color: rgba(61, 126, 206, 0.75);
     cursor: pointer;
   }
 EOL
+
+    zenity --info --title="Project Created" --text="Project '$PROJECT_NAME' created successfully!"
+
+    # Ask if the user wants to initialize a git repository
+    INIT_GIT=$(zenity --question --title="Git Initialization" --text="Do you want to initialize a Git repository?" --ok-label="Yes" --cancel-label="No")
+
+    if [ $? -eq 0 ]; then
+        git init
+        git add .
+        git commit -m "Initial commit for $PROJECT_NAME"
+        zenity --info --text="Git repository initialized and initial commit made."
+    else
+        zenity --info --text="No Git repository initialized."
+    fi
+
 }
 # Function to create a new project
 create_project() {
