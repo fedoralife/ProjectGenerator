@@ -95,7 +95,7 @@ To directly run the script:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/fedoralife/C---Project---Setup.git
+   git clone https://github.com/fedoralife/ProjectGenerator.git
    ```
 
 2. **Navigate to the script directory**:
