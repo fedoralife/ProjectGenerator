@@ -1,0 +1,3 @@
+/home/codedemon/DEV/project-gen/ProjectGenerator/build/CMakeFiles/my_program.dir
+/home/codedemon/DEV/project-gen/ProjectGenerator/build/CMakeFiles/edit_cache.dir
+/home/codedemon/DEV/project-gen/ProjectGenerator/build/CMakeFiles/rebuild_cache.dir
