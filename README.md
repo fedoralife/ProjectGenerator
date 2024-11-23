@@ -77,6 +77,22 @@ If you don't have the required dependencies, you can install them as follows:
 
 To directly run the script:
 
+### First install zenity
+
+### Linux
+- **Arch-based distro**:
+   ```sh
+   sudo pacman -S zenity 
+   ```
+- **Debian-based distro**:
+   ```sh
+   sudo apt install zenity 
+   ```
+- **Fedora-based distro**:
+   ```sh
+   sudo dnf install zenity 
+   ```
+
 1. **Clone the repository**:
    ```sh
    git clone https://github.com/fedoralife/ProjectGenerator.git
