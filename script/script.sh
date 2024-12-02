@@ -61,7 +61,7 @@ zenity --info --title="Build Instructions" --text="To build the project, follow 
 2. Navigate to the project directory.
 3. Run the following commands:
    mkdir build
-   cd build 
+   cd build
    cmake ..
    make
 4. Run the executable:
@@ -74,6 +74,9 @@ project(CppFileGenerator VERSION 1.0)
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED True)
+
+# Ensure the compile_commands.json file is generated
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Set output directory within the build directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY \${CMAKE_BINARY_DIR}/bin)
@@ -158,6 +161,53 @@ EOL
     else
         zenity --info --text="No Git repository initialized."
     fi
+
+    # Create .clangd file for clangd configuration
+    cat > .clangd <<EOL
+CompileFlags:
+  Add:
+    - -std=c++17
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+
+# Use compile_commands.json for clangd
+CompilationDatabase: ./build/compile_commands.json
+EOL
+
+    # Create build.sh script in scripts folder
+    cat > scripts/build.sh <<EOL
+#!/bin/bash
+
+# Check if the build directory exists, create if not
+if [ ! -d "build" ]; then
+    echo "Build directory doesn't exist. Creating build directory."
+    mkdir build
+fi
+
+# Navigate to the build directory and build the project
+cd build || exit
+cmake ..
+make
+EOL
+    chmod +x scripts/build.sh
+
+    # Create run.sh script in scripts folder
+    cat > scripts/run.sh <<EOL
+#!/bin/bash
+# Check if the build directory exists
+if [ ! -d "build" ]; then
+    echo "Build directory does not exist. Please build the project first using build.sh."
+    exit 1
+fi
+
+# Navigate to the build directory and run the executable
+
+cd build
+cd bin
+./app
+EOL
+    chmod +x scripts/run.sh
 }
 
 # Function to delete a project
